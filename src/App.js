@@ -5,7 +5,7 @@ import FormulaInput from "./components/FormulaInput";
 
 function App() {
   const containerStyle = {
-    margin: "20px 100px", // Center the container
+    margin: "20px 100px",
     padding: "20px",
     border: "1px solid #ccc",
     borderRadius: "5px",
@@ -15,7 +15,6 @@ function App() {
       <QueryClientProvider client={queryClient}>
         <div style={containerStyle}>
           <FormulaInput />
-          {/* Any other components */}
         </div>
       </QueryClientProvider>
     </>

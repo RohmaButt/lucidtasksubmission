@@ -66,7 +66,7 @@ const FormulaInput = () => {
       const data = await response.json();
       setSuggestions(data);
     } catch (error) {
-      console.error("Error fetching autocomplete suggestions:", error);
+      console.error("Error fetching  while autocomplete suggestions:", error);
       setSuggestions([]);
     }
   };
@@ -121,7 +121,9 @@ const FormulaInput = () => {
                 "-" +
                 suggestion.category +
                 ":            " +
-                (checkForNumericChars(suggestion.value) ? "numeric" : "string")}
+                (checkForNumericChars(suggestion.value)
+                  ? "function"
+                  : "numeric")}
             </li>
           ))}
         </ul>

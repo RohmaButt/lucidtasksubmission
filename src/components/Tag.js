@@ -6,21 +6,17 @@ const Tag = ({ content, index }) => {
   const [editContent, setEditContent] = useState(content);
   const { removeTag, updateTag } = useFormulaStore();
 
-  // Toggle edit mode on and off
   const toggleEditMode = () => {
     setIsEditing(!isEditing);
     if (isEditing) {
-      // Update the tag in the global state when editing is finished
       updateTag(index, editContent);
     }
   };
 
-  // Update local state as the tag is edited
   const handleEditChange = (e) => {
     setEditContent(e.target.value);
   };
 
-  // Handle removing a tag
   const handleRemove = () => {
     removeTag(index);
   };
@@ -55,7 +51,7 @@ const Tag = ({ content, index }) => {
           type="text"
           value={editContent}
           onChange={handleEditChange}
-          onBlur={toggleEditMode} // Optionally, toggle edit mode off when input loses focus
+          onBlur={toggleEditMode}
           autoFocus
         />
       ) : (
